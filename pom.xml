@@ -10,6 +10,15 @@
     <name>Test Automation Framework</name>
     <url>http//:comments.azurewebsites.net</url>
 
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -47,5 +56,21 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <profiles>
+        <profile>
+            <id>RunTestsOnChrome</id>
+            <activation>
+            <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <driverType>Chrome</driverType>
+            </properties>
+        </profile>
+        <profile>
+            <id>RunTestsOnFireFox</id>
+            <properties>
+                <driverType>FireFox</driverType>
+            </properties>
+        </profile>
+    </profiles>
 </project>
