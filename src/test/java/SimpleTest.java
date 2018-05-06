@@ -1,5 +1,7 @@
-import org.junit.Test;
-import org.junit.Assert;
+
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,6 +12,7 @@ public class SimpleTest {
     public void simpleValidation(){
         Assert.assertEquals(7, 4+3);
     }
+
     @Test
     public void checkThatFierfox(){
         String valueFromProfile;
